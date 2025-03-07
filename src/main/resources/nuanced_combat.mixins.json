@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.feliscape.nuanced_combat.content.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MobMixin"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
