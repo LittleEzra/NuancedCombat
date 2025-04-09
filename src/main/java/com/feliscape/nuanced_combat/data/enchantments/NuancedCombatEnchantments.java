@@ -31,7 +31,7 @@ public class NuancedCombatEnchantments {
                                 itemHolderGetter.getOrThrow(Tags.Items.TOOLS_SHIELD),
                                 Optional.empty(),
                                 30,
-                                1,
+                                2,
                                 new Enchantment.Cost(4, 2),
                                 new Enchantment.Cost(5, 3),
                                 4,

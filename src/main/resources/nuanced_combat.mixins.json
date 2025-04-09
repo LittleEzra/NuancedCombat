@@ -3,7 +3,9 @@
   "package": "com.feliscape.nuanced_combat.content.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MobMixin"
+    "MobMixin",
+    "LivingEntityRendererMixin",
+    "LivingEntityMixin"
   ],
   "client": [
 

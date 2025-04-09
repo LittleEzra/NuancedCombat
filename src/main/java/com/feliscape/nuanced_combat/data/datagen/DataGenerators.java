@@ -8,6 +8,7 @@ import com.feliscape.nuanced_combat.data.datagen.model.NCBlockModelProvider;
 import com.feliscape.nuanced_combat.data.datagen.model.NCItemModelProvider;
 import com.feliscape.nuanced_combat.data.datagen.recipe.NCRecipeProvider;
 import com.feliscape.nuanced_combat.data.datagen.tag.NCBlockTagGenerator;
+import com.feliscape.nuanced_combat.data.datagen.tag.NCDamageTypeTagGenerator;
 import com.feliscape.nuanced_combat.data.datagen.tag.NCItemTagGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -44,6 +45,7 @@ public class DataGenerators {
         var blockTags = new NCBlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(true, blockTags);
         generator.addProvider(true, new NCItemTagGenerator(packOutput, lookupProvider, blockTags.contentsGetter()));
+        generator.addProvider(true, new NCDamageTypeTagGenerator(packOutput, lookupProvider, existingFileHelper));
 
         //generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
         //        List.of(new LootTableProvider.SubProviderEntry(NCBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));

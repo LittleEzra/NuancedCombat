@@ -5,6 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -25,6 +26,15 @@ public abstract class NCLanguageProvider extends LanguageProvider {
 
     protected void addItemTooltip(Supplier<? extends Item> key, String name) {
         add(key.get().getDescriptionId() + ".tooltip", name);
+    }
+    protected void addDeathMessage(ResourceKey<DamageType> key, String message) {
+        add("death.attack.%s.".formatted(key.location().toString()), message);
+    }
+    protected void addDeathMessageItem(ResourceKey<DamageType> key, String message) {
+        add("death.attack.%s.item".formatted(key.location().toString()), message);
+    }
+    protected void addDeathMessagePlayer(ResourceKey<DamageType> key, String message) {
+        add("death.attack.%s.player".formatted(key.location().toString()), message);
     }
     protected void addMobEffect(Supplier<? extends MobEffect> key, String name) {
         add(key.get().getDescriptionId(), name);

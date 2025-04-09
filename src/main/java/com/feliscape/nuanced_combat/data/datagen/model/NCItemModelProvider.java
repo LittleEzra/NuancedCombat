@@ -2,6 +2,7 @@ package com.feliscape.nuanced_combat.data.datagen.model;
 
 
 import com.feliscape.nuanced_combat.NuancedCombat;
+import com.feliscape.nuanced_combat.registry.NuancedCombatItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,9 @@ public class NCItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(NuancedCombatItems.EXPLOSIVE_ARROW.get());
+        basicItem(NuancedCombatItems.IRON_NEEDLE.get());
+        basicItem(NuancedCombatItems.STEEL_NEEDLE.get());
     }
 
     public ItemModelBuilder mugItem(Item item) {

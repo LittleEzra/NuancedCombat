@@ -1,6 +1,6 @@
 package com.feliscape.nuanced_combat;
 
-import com.feliscape.nuanced_combat.registry.NuancedCombatMobEffects;
+import com.feliscape.nuanced_combat.registry.*;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 
@@ -29,14 +29,21 @@ public class NuancedCombat
     public NuancedCombat(IEventBus modEventBus, ModContainer modContainer)
     {
         modEventBus.addListener(this::commonSetup);
+        modContainer.registerConfig(ModConfig.Type.CLIENT, NCClientConfig.SPEC);
+
+        NuancedCombatItems.register(modEventBus);
+        NuancedCombatComponents.register(modEventBus);
+        NuancedCombatEntityTypes.register(modEventBus);
+
+        NuancedCombatRecipeTypes.register(modEventBus);
+        NuancedCombatRecipeSerializers.register(modEventBus);
 
         NuancedCombatMobEffects.register(modEventBus);
+        NuancedCombatDataAttachments.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::addCreative);
-
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modEventBus.addListener(NuancedCombatCreativeModeTabs::addCreative);
     }
 
     public static ResourceLocation location(String path){
@@ -45,27 +52,11 @@ public class NuancedCombat
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
 
-    }
-
-    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
-        }
     }
 }

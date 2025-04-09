@@ -19,6 +19,9 @@ public class NuancedCombatMobEffects {
     public static final DeferredHolder<MobEffect, StunMobEffect> STUN = MOB_EFFECTS.register(
             "stun", () -> new StunMobEffect(MobEffectCategory.HARMFUL, ColorUtil.getIntColor("#fad64a"))
     );
+    public static final DeferredHolder<MobEffect, NoTickMobEffect> THROUGHSIGHT = MOB_EFFECTS.register(
+            "throughsight", () -> new NoTickMobEffect(MobEffectCategory.BENEFICIAL, ColorUtil.getIntColor("#edd1e7"))
+    );
 
     public static void register(IEventBus eventBus){
         MOB_EFFECTS.register(eventBus);

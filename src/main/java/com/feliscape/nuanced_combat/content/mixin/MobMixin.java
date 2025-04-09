@@ -19,18 +19,16 @@ public abstract class MobMixin extends LivingEntity implements EquipmentUser, Le
         super(entityType, level);
     }
 
-    @Nullable
-    @Inject(method = "getTarget", at = @At("HEAD"), cancellable = true)
+    /*@Inject(method = "getTarget", at = @At("HEAD"), cancellable = true)
     public void onGetTarget(CallbackInfoReturnable<LivingEntity> cir) {
         if (hasEffect(NuancedCombatMobEffects.STUN)){
             cir.setReturnValue(null);
         }
     }
-    @Nullable
     @Inject(method = "getTargetFromBrain", at = @At("HEAD"), cancellable = true)
     protected void onGetTargetFromBrain(CallbackInfoReturnable<LivingEntity> cir) {
         if (hasEffect(NuancedCombatMobEffects.STUN)){
             cir.setReturnValue(null);
         }
-    }
+    }*/
 }

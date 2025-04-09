@@ -1,6 +1,7 @@
 package com.feliscape.nuanced_combat.data.datagen;
 
 import com.feliscape.nuanced_combat.NuancedCombat;
+import com.feliscape.nuanced_combat.data.damagetypes.NuancedCombatDamageTypes;
 import com.feliscape.nuanced_combat.data.enchantments.NuancedCombatEnchantments;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -17,7 +18,7 @@ public class NCGeneratedEntries extends DatapackBuiltinEntriesProvider {
             //.add(Registries.CONFIGURED_FEATURE, PrismaTreeFeatures::bootstrap)
             //.add(Registries.PLACED_FEATURE, DeepwoodPlacedFeatures::bootstrap)
             //.add(ForgeRegistries.Keys.BIOME_MODIFIERS, DeepwoodBiomeModifiers::bootstrap)
-            //.add(Registries.DAMAGE_TYPE, DeepwoodDamageTypes::bootstrap)
+            .add(Registries.DAMAGE_TYPE, NuancedCombatDamageTypes::bootstrap)
             //.add(Registries.NOISE, DeepwoodNoise::bootstrap)
             ;
     public NCGeneratedEntries(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
