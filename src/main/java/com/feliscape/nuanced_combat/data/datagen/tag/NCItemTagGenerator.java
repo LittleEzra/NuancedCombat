@@ -18,5 +18,9 @@ public class NCItemTagGenerator extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(ItemTags.ARROWS)
                 .add(NuancedCombatItems.EXPLOSIVE_ARROW.get());
+
+        // Enchantable
+        this.tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(NuancedCombatItems.WAVEHAMMER.get());
     }
 }

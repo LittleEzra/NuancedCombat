@@ -23,15 +23,24 @@ public class NCItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(NuancedCombatItems.EXPLOSIVE_ARROW.get());
+        handheldItem(NuancedCombatItems.WAVEHAMMER.get());
+        potionBundleItem(NuancedCombatItems.POTION_BUNDLE.get());
+
+
+        // discarded ideas
         basicItem(NuancedCombatItems.IRON_NEEDLE.get());
         basicItem(NuancedCombatItems.STEEL_NEEDLE.get());
     }
 
-    public ItemModelBuilder mugItem(Item item) {
-        return this.mugItem(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)));
+    public ItemModelBuilder potionBundleItem(Item item) {
+        return this.potionBundleItem(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)));
     }
-    public ItemModelBuilder mugItem(ResourceLocation item) {
-        return this.getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("brewersdelight:item/mug_item"))
-                .texture("layer0", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "item/" + item.getPath()));
+    public ItemModelBuilder potionBundleItem(ResourceLocation item) {
+        return this.getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("nuanced_combat:item/potion_bundle_template"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "item/" + item.getPath()))
+                .texture("layer1", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "item/" + item.getPath() + "_layer1"))
+                .texture("layer2", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "item/" + item.getPath() + "_layer2"))
+                .texture("layer3", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "item/" + item.getPath() + "_layer3"))
+                ;
     }
 }

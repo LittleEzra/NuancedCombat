@@ -2,6 +2,7 @@ package com.feliscape.nuanced_combat.content.item;
 
 import com.feliscape.nuanced_combat.content.entity.projectile.ExplosiveArrow;
 import com.feliscape.nuanced_combat.registry.NuancedCombatComponents;
+import com.feliscape.nuanced_combat.registry.NuancedCombatItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -32,6 +33,11 @@ public class ExplosiveArrowItem extends ArrowItem {
 
     public static void setStrength(ItemStack pStack, int power) {
         pStack.set(NuancedCombatComponents.POWER, power);
+    }
+    public static ItemStack forStrength(int power) {
+        ItemStack itemStack = new ItemStack(NuancedCombatItems.EXPLOSIVE_ARROW.get(), 1);
+        itemStack.set(NuancedCombatComponents.POWER, power);
+        return itemStack;
     }
 
     @Override

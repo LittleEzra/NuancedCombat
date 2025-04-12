@@ -3,6 +3,7 @@ package com.feliscape.nuanced_combat.networking;
 import com.feliscape.nuanced_combat.NuancedCombat;
 import com.feliscape.nuanced_combat.networking.packets.AddStunnedEntityPayload;
 import com.feliscape.nuanced_combat.networking.packets.RemoveStunnedEntityPayload;
+import com.feliscape.nuanced_combat.networking.packets.UpdateDrowsyShaderPayload;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
@@ -26,6 +27,11 @@ public class NuancedCombatPayloads {
         registrar.playToClient(
                 RemoveStunnedEntityPayload.TYPE,
                 RemoveStunnedEntityPayload.STREAM_CODEC,
+                NuancedCombatClientPayloadHandler::handle
+        );
+        registrar.playToClient(
+                UpdateDrowsyShaderPayload.TYPE,
+                UpdateDrowsyShaderPayload.STREAM_CODEC,
                 NuancedCombatClientPayloadHandler::handle
         );
     }

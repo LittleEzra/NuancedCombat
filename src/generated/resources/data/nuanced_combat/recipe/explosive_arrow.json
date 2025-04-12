@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:arrow"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    }
+  ],
+  "result": {
+    "components": {
+      "nuanced_combat:power": 3
+    },
+    "count": 1,
+    "id": "nuanced_combat:explosive_arrow"
+  }
+}

@@ -2,6 +2,7 @@ package com.feliscape.nuanced_combat.registry;
 
 import com.feliscape.nuanced_combat.NuancedCombat;
 import com.feliscape.nuanced_combat.content.recipe.ExplosiveArrowRecipe;
+import com.feliscape.nuanced_combat.content.recipe.PotionBundleRecipe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.FireworkRocketRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -17,6 +18,8 @@ public class NuancedCombatRecipeSerializers {
 
     public static final Supplier<RecipeSerializer<?>> EXPLOSIVE_ARROW = RECIPE_SERIALIZERS.register("explosive_arrow",
             () -> new SimpleCraftingRecipeSerializer<>(ExplosiveArrowRecipe::new));
+    public static final Supplier<RecipeSerializer<?>> POTION_BUNDLE = RECIPE_SERIALIZERS.register("potion_bundle",
+            () -> new SimpleCraftingRecipeSerializer<>(PotionBundleRecipe::new));
 
     public static void register(IEventBus eventBus){
         RECIPE_SERIALIZERS.register(eventBus);

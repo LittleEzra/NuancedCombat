@@ -11,7 +11,10 @@ public class NuancedCombatCreativeModeTabs {
     public static void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.COMBAT){
-            createAllExplosiveArrows(event);
+            //createAllExplosiveArrows(event);
+            event.accept(ExplosiveArrowItem.forStrength(3));
+            event.accept(NuancedCombatItems.WAVEHAMMER);
+            event.accept(NuancedCombatItems.POTION_BUNDLE);
         }
     }
 

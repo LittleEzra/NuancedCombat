@@ -2,6 +2,7 @@ package com.feliscape.nuanced_combat.content.entity.projectile;
 
 import com.feliscape.nuanced_combat.NuancedCombat;
 import com.feliscape.nuanced_combat.content.item.ExplosiveArrowItem;
+import com.feliscape.nuanced_combat.content.world.OwnedExplosionDamageCalculator;
 import com.feliscape.nuanced_combat.registry.NuancedCombatEntityTypes;
 import com.feliscape.nuanced_combat.registry.NuancedCombatItems;
 import net.minecraft.core.HolderSet;
@@ -26,12 +27,15 @@ import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class ExplosiveArrow extends AbstractArrow {
-    public static final ExplosionDamageCalculator EXPLOSION_DAMAGE_CALCULATOR =
-            new SimpleExplosionDamageCalculator(false, true, Optional.of(1.5F), Optional.empty());
-    public static final ExplosionDamageCalculator MULTISHOT_EXPLOSION_DAMAGE_CALCULATOR =
-            new SimpleExplosionDamageCalculator(false, true, Optional.of(0.5F), Optional.empty());
+    private final Predicate<Entity> damageEntityPredicate = (entity) -> entity != ExplosiveArrow.this.getOwner();
+
+    public final ExplosionDamageCalculator EXPLOSION_DAMAGE_CALCULATOR =
+            new OwnedExplosionDamageCalculator(false, true, Optional.of(1.5F), damageEntityPredicate, Optional.empty());
+    public final ExplosionDamageCalculator MULTISHOT_EXPLOSION_DAMAGE_CALCULATOR =
+            new OwnedExplosionDamageCalculator(false, true, Optional.of(0.5F), damageEntityPredicate, Optional.empty());
 
     boolean isFromMultishot;
 

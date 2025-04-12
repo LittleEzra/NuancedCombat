@@ -1,0 +1,8 @@
+{
+  "item.charged": {
+    "sounds": [
+      { "name": "nuanced_combat:item/charged" }
+    ],
+    "subtitle": "subtitle.nuanced_combat.item.charged"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "targets": [
+    "swap"
+  ],
+  "passes": [
+    {
+      "name": "nuanced_combat:fuzzy",
+      "intarget": "minecraft:main",
+      "outtarget": "swap",
+      "uniforms": [
+
+      ]
+    },
+    {
+      "name": "blit",
+      "intarget": "swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}

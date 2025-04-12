@@ -31,6 +31,7 @@ public class NuancedCombat
         modEventBus.addListener(this::commonSetup);
         modContainer.registerConfig(ModConfig.Type.CLIENT, NCClientConfig.SPEC);
 
+        NuancedCombatSoundEvents.register(modEventBus);
         NuancedCombatItems.register(modEventBus);
         NuancedCombatComponents.register(modEventBus);
         NuancedCombatEntityTypes.register(modEventBus);
@@ -39,6 +40,7 @@ public class NuancedCombat
         NuancedCombatRecipeSerializers.register(modEventBus);
 
         NuancedCombatMobEffects.register(modEventBus);
+        NuancedCombatPotions.register(modEventBus);
         NuancedCombatDataAttachments.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);

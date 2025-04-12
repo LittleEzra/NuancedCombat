@@ -6,16 +6,22 @@ import com.feliscape.nuanced_combat.networking.packets.AddStunnedEntityPayload;
 import com.feliscape.nuanced_combat.networking.packets.RemoveStunnedEntityPayload;
 import com.feliscape.nuanced_combat.registry.NuancedCombatDataAttachments;
 import com.feliscape.nuanced_combat.registry.NuancedCombatMobEffects;
+import com.feliscape.nuanced_combat.registry.NuancedCombatPotions;
 import com.feliscape.nuanced_combat.registry.NuancedCombatTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.event.brewing.PotionBrewEvent;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.EffectParticleModificationEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -74,6 +80,16 @@ public class Events {
             if (!(event.getEntity() instanceof Player) && event.getEffectInstance().is(NuancedCombatMobEffects.STUN)){
                 PacketDistributor.sendToAllPlayers(new RemoveStunnedEntityPayload(event.getEntity().getId()));
             }
+        }
+        @SubscribeEvent
+        public static void registerBrewingRecipes(RegisterBrewingRecipesEvent event){
+            PotionBrewing.Builder builder = event.getBuilder();
+
+            builder.addMix(
+                    Potions.AWKWARD,
+                    Items.TNT,
+                    NuancedCombatPotions.COMBUSTION
+            );
         }
     }
 }

@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:nether/brew_potion",
+  "criteria": {
+    "drink_combustion_potion": {
+      "conditions": {
+        "item": {
+          "components": {
+            "minecraft:potion_contents": {
+              "potion": "nuanced_combat:combustion"
+            }
+          },
+          "items": "minecraft:potion"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.nuanced_combat.drink_combustion_potion.description"
+    },
+    "hidden": true,
+    "icon": {
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "nuanced_combat:combustion"
+        }
+      },
+      "count": 1,
+      "id": "minecraft:potion"
+    },
+    "title": {
+      "translate": "advancements.nuanced_combat.drink_combustion_potion.title"
+    }
+  },
+  "requirements": [
+    [
+      "drink_combustion_potion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

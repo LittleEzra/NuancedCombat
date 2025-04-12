@@ -10,12 +10,15 @@ public class NuancedCombatClient {
 
     private final WispRenderer wispRenderer;
 
+    public final NCPostProcessingManager postProcessingManager;
+
     public NuancedCombatClient(RegisterClientReloadListenersEvent event){
         instance = this;
         NuancedCombat.LOGGER.info("NuancedCombatClient instantiated");
 
         wispRenderer = new WispRenderer(Minecraft.getInstance().getEntityModels());
         event.registerReloadListener(wispRenderer);
+        postProcessingManager = new NCPostProcessingManager();
     }
 
     public WispRenderer wispRenderer() { return this.wispRenderer; }

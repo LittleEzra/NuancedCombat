@@ -5,7 +5,8 @@
   "mixins": [
     "MobMixin",
     "LivingEntityRendererMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "ThrownPotionMixin"
   ],
   "client": [
 

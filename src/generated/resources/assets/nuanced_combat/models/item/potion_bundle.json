@@ -1,0 +1,9 @@
+{
+  "parent": "nuanced_combat:item/potion_bundle_template",
+  "textures": {
+    "layer0": "nuanced_combat:item/potion_bundle",
+    "layer1": "nuanced_combat:item/potion_bundle_layer1",
+    "layer2": "nuanced_combat:item/potion_bundle_layer2",
+    "layer3": "nuanced_combat:item/potion_bundle_layer3"
+  }
+}
