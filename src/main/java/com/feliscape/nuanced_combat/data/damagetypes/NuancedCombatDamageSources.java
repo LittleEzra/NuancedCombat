@@ -13,6 +13,12 @@ public class NuancedCombatDamageSources {
                 directEntity, causingEntity
         );
     }
+    public static DamageSource boomerang(@Nullable Entity causingEntity, Entity directEntity){
+        return new DamageSource(
+                directEntity.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(NuancedCombatDamageTypes.BOOMERANG),
+                directEntity, causingEntity
+        );
+    }
     public static DamageSource bleeding(Level level){
         return new DamageSource(
                 level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(NuancedCombatDamageTypes.BLEEDING), (Entity) null

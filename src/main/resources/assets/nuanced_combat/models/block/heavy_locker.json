@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "nuanced_combat:block/heavy_locker_side",
+    "down": "nuanced_combat:block/heavy_locker_bottom",
+    "up": "nuanced_combat:block/heavy_locker_top",
+    "north": "nuanced_combat:block/heavy_locker_front",
+    "east": "nuanced_combat:block/heavy_locker_side",
+    "south": "nuanced_combat:block/heavy_locker_side",
+    "west": "nuanced_combat:block/heavy_locker_side"
+  }
+}

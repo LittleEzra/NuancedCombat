@@ -4,5 +4,17 @@
       { "name": "nuanced_combat:item/charged" }
     ],
     "subtitle": "subtitle.nuanced_combat.item.charged"
+  },
+  "item.implosion_device.charging": {
+    "sounds": [
+      { "name": "nuanced_combat:item/implosion_device/charging" }
+    ],
+    "subtitle": "subtitle.nuanced_combat.item.implosion_device.charging"
+  },
+  "item.implosion_device.discharge": {
+    "sounds": [
+      { "name": "nuanced_combat:item/implosion_device/electricity" }
+    ],
+    "subtitle": "subtitle.nuanced_combat.item.implosion_device.discharge"
   }
 }

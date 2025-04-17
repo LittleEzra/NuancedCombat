@@ -14,7 +14,7 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 
-@EventBusSubscriber(modid = NuancedCombat.MOD_ID)
+//@EventBusSubscriber(modid = NuancedCombat.MOD_ID)
 public class DrowsyEffectHandler {
     /*@SubscribeEvent
     public static void onEntityJoinLevel(EntityJoinLevelEvent event){

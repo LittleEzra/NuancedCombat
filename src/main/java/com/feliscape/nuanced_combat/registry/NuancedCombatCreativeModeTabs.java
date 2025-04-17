@@ -13,8 +13,14 @@ public class NuancedCombatCreativeModeTabs {
         if (event.getTabKey() == CreativeModeTabs.COMBAT){
             //createAllExplosiveArrows(event);
             event.accept(ExplosiveArrowItem.forStrength(3));
+            event.accept(NuancedCombatItems.WINGED_ARROW);
+            event.accept(NuancedCombatItems.PRISMARINE_ARROW);
+            event.accept(NuancedCombatItems.BOOMERANG);
             event.accept(NuancedCombatItems.WAVEHAMMER);
+            event.accept(NuancedCombatItems.IMPLOSION_DEVICE);
             event.accept(NuancedCombatItems.POTION_BUNDLE);
+        } else if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.accept(NuancedCombatBlocks.HEAVY_LOCKER);
         }
     }
 
@@ -24,7 +30,6 @@ public class NuancedCombatCreativeModeTabs {
             ItemStack itemstack = new ItemStack(NuancedCombatItems.EXPLOSIVE_ARROW.get());
             ExplosiveArrowItem.setStrength(itemstack, i);
             pOutput.accept(itemstack, i == 3 ? CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS : CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
-            NuancedCombatItems.STEEL_NEEDLE.get();
         }
     }
 }

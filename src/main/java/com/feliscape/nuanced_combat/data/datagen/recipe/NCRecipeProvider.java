@@ -8,6 +8,7 @@ import com.feliscape.nuanced_combat.registry.NuancedCombatItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.FireworkRocketRecipe;
 
@@ -25,6 +26,32 @@ public class NCRecipeProvider extends RecipeProvider {
                 .requires(Items.ARROW)
                 .requires(Items.GUNPOWDER)
                 .unlockedBy(getHasName(Items.GUNPOWDER), has(Items.GUNPOWDER))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, NuancedCombatItems.WINGED_ARROW.get(), 4)
+                .pattern(" # ")
+                .pattern("F/F")
+                .pattern(" F ")
+                .define('#', Items.AMETHYST_SHARD)
+                .define('/', Items.STICK)
+                .define('F', Items.FEATHER)
+                .unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, NuancedCombatItems.PRISMARINE_ARROW.get(), 4)
+                .pattern("#")
+                .pattern("/")
+                .pattern("F")
+                .define('#', Items.PRISMARINE_SHARD)
+                .define('/', Items.STICK)
+                .define('F', Items.FEATHER)
+                .unlockedBy(getHasName(Items.PRISMARINE_SHARD), has(Items.PRISMARINE_SHARD))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, NuancedCombatItems.BOOMERANG.get())
+                .pattern("PPI")
+                .pattern("  P")
+                .pattern("  P")
+                .define('P', ItemTags.PLANKS)
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(recipeOutput);
         /*ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, NuancedCombatItems.POTION_BUNDLE)
                 .pattern(" S ")

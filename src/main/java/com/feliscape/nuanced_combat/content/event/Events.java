@@ -49,13 +49,6 @@ public class Events {
                 }
             }
         }
-
-        @SubscribeEvent
-        public static void afterEntityTick(EntityTickEvent.Post event){
-            if (event.getEntity() instanceof LivingEntity living && living.hasData(NuancedCombatDataAttachments.STEEL_NEEDLES)){
-                living.getData(NuancedCombatDataAttachments.STEEL_NEEDLES).tick(living);
-            }
-        }
         @SubscribeEvent
         public static void onEntityJoinLevel(EntityJoinLevelEvent event){
             if (!(event.getEntity() instanceof Player) && event.getEntity() instanceof LivingEntity living && living.hasEffect(NuancedCombatMobEffects.STUN)){

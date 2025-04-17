@@ -11,8 +11,9 @@ import java.util.stream.Stream;
 public class NuancedCombatModelLayers {
     private static final Set<ModelLayerLocation> ALL_MODELS = Sets.newHashSet();
 
-    public static final ModelLayerLocation IRON_NEEDLE = register("iron_needle");
     public static final ModelLayerLocation WISP = register("wisp");
+    public static final ModelLayerLocation IMPLOSION_DEVICE = register("implosion_device");
+    public static final ModelLayerLocation BOOMERANG = register("boomerang");
 
     private static ModelLayerLocation register(String path) {
         return register(path, "main");

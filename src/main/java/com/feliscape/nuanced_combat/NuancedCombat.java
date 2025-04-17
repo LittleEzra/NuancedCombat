@@ -32,6 +32,8 @@ public class NuancedCombat
         modContainer.registerConfig(ModConfig.Type.CLIENT, NCClientConfig.SPEC);
 
         NuancedCombatSoundEvents.register(modEventBus);
+        NuancedCombatBlocks.register(modEventBus);
+        NuancedCombatBlockEntities.register(modEventBus);
         NuancedCombatItems.register(modEventBus);
         NuancedCombatComponents.register(modEventBus);
         NuancedCombatEntityTypes.register(modEventBus);

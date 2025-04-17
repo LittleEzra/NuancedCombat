@@ -48,7 +48,7 @@ public class WispRenderer implements ResourceManagerReloadListener {
 
         float scale = falloff((float) distance / 16.0F, 3.0F);
         poseStack.scale(scale, scale, scale);
-        poseStack.scale(-1F, -1F, -1F);
+        poseStack.scale(-1F, -1F, 1F);
 
         var texture = TEXTURES[Mth.floor((entity.tickCount + partialTick) / 8.0F) % TEXTURES.length];
         model.renderToBuffer(poseStack, bufferSource.getBuffer(NuancedCombatRenderTypes.wisp(texture)), packedLight, packedOverlay);

@@ -14,6 +14,8 @@ public class NuancedCombatDamageTypes {
             NuancedCombat.location("iron_needle"));
     public static final ResourceKey<DamageType> BLEEDING = ResourceKey.create(Registries.DAMAGE_TYPE,
             NuancedCombat.location("bleeding"));
+    public static final ResourceKey<DamageType> BOOMERANG = ResourceKey.create(Registries.DAMAGE_TYPE,
+            NuancedCombat.location("boomerang"));
 
     public static void bootstrap(BootstrapContext<DamageType> context){
         context.register(IRON_NEEDLE, new DamageType(IRON_NEEDLE.location().toString(),
@@ -22,6 +24,10 @@ public class NuancedCombatDamageTypes {
         );
         context.register(BLEEDING, new DamageType(BLEEDING.location().toString(),
                 0.2f,
+                DamageEffects.HURT)
+        );
+        context.register(BOOMERANG, new DamageType(BOOMERANG.location().toString(),
+                0.1f,
                 DamageEffects.HURT)
         );
     }

@@ -13,6 +13,8 @@ public class NuancedCombatSoundEvents {
             DeferredRegister.create(Registries.SOUND_EVENT, NuancedCombat.MOD_ID);
 
     public static final Supplier<SoundEvent> ITEM_CHARGED = registerSoundEvent("item.charged");
+    public static final Supplier<SoundEvent> IMPLOSION_DEVICE_CHARGING = registerSoundEvent("item.implosion_device.charging", 12.0F);
+    public static final Supplier<SoundEvent> IMPLOSION_DEVICE_DISCHARGE = registerSoundEvent("item.implosion_device.discharge", 12.0F);
 
     public static void register(IEventBus eventBus)
     {

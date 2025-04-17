@@ -1,0 +1,6 @@
+{
+  "parent": "nuanced_combat:item/template_boomerang",
+  "textures": {
+    "layer0": "nuanced_combat:item/boomerang"
+  }
+}
